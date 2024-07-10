@@ -38,6 +38,6 @@ Filepath: `census_cleanup.ipynb`
 #### Transition matrix calculator 
 Calculates transition matrix from cleaned census data and effective distance matrix, along with some parameters used in 
 the supplementary materials of https://www.science.org/doi/10.1126/science.1245200#supplementary-materials.
-If a different data was used, parameters $$\Ohm, \Phi$$ in this script will need to be recalculated from data. 
+If a different data was used, parameters $$\Omega, \Phi$$ in this script will need to be recalculated from data. 
 
 Filepath: `migration_matrix.ipynb`
