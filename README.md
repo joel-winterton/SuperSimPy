@@ -13,9 +13,7 @@ Filepath: `original_data/population2013.csv`
 Source: https://data-explorer.oecd.org/vis?tenant=archive&df[ds]=DisseminateArchiveDMZ&df[id]=DF_EDU_DEM&df[ag]=OECD&dq=..&pd=2013%2C2013&to[TIME_PERIOD]=false
 
 #### Effective distance matrix
-Matrix of effective distance between countries, as defined in https://www.science.org/doi/10.1126/science.1245200, 
-the effective distance from $m$ to $n$, $d_{mn}$, given the number of air passengers per day from m to n $F_{mn}$ is:
-$$d_{mn} = 1 - \log{F_{m}}$$
+Matrix of effective distance between countries, as defined in https://www.science.org/doi/10.1126/science.1245200.
 
 Filepath: `original_data/effective.distance.matrix.country.csv`
 
