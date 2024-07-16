@@ -1,43 +1,19 @@
 # SuperDimPy
 Scripts used to create simulation of 5million+ genome pandemic that can be used to test phylogenetic methods on large scale epidemics.
-## Data estimation
-These scripts provide examples of realistic data that can be used inputted into the simulations.
-The end result of these scripts is data describing migration between 203 countries based off airline flights in 2013, 
-with the data being in a compatible format to be used in the simulation pipeline.
+## Current pipeline: 
+**@todo:** both VGsim and Phastsim have been modified to interface properly with this simulator, so a fork of both needs to be included here instead of the original repositories which will break the pipeline.
 
-### Input data
-#### World population by country 
-Count of each countries' population. 
-Filepath: `original_data/population2013.csv`
+**@todo:** pandemic-simulator is not needed since it just creates several workflows, and we use one of them, consider creating our own snakemake workflow.
+Prerequisites: 
+Both these prerequisites have been modified to work with the pipeline, so you'll need to use my forked version: 
+1. VGsim https://github.com/joely-w/VGsim, and the path to `VGsim_cmd.py` needs to be known.
+2. PhastSim https://github.com/NicolaDM/phastSim, and the path to the directory `bin/phastSim` contained within the installation of phastSim needs to be known.
+3. pandemic-simulator https://github.com/jmcbroome/pandemic-simulator this ties together phastSim and vgSim into a single pipeline
 
-Source: https://data-explorer.oecd.org/vis?tenant=archive&df[ds]=DisseminateArchiveDMZ&df[id]=DF_EDU_DEM&df[ag]=OECD&dq=..&pd=2013%2C2013&to[TIME_PERIOD]=false
+Pipeline:
 
-#### Effective distance matrix
-Matrix of effective distance between countries, as defined in https://www.science.org/doi/10.1126/science.1245200.
+Using the pandemic-simulator workflow, data must be created (in this repository data for a simulation using 209 countries is generated),
+this created data must be placed in the pandemic-simulator workflow and referenced in the `config.yml` in place of the basic 2 population configuration.
 
-Filepath: `original_data/effective.distance.matrix.country.csv`
-
-### Output data
-#### Cleaned census file
-Filepath: `output/census_2013.csv`
-#### Alpha 2 codes of countries used in data
-Filepath: `output/country_codes.csv`
-#### Transition matrix 
-In format that will be compatible with VGsim migration model.
-Order of countries is the same as in `output/country_codes.csv`.
-
-Filepath: `output/country_migration.mg`
-
-### Scripts 
-#### Census cleanup 
-Creates a census in the format used in the effective distance data.
-Specifically makes sure all country codes are the same format as in effective distance (alpha2).
-
-Filepath: `census_cleanup.ipynb`
-
-#### Transition matrix calculator 
-Calculates transition matrix from cleaned census data and effective distance matrix, along with some parameters used in 
-the supplementary materials of https://www.science.org/doi/10.1126/science.1245200#supplementary-materials.
-If a different data was used, parameters $$\Omega, \Phi$$ in this script will need to be recalculated from data. 
-
-Filepath: `migration_matrix.ipynb`
+The snakemake workflow can then be run.
+https://github.com/jmcbroome/pandemic-simulator/
