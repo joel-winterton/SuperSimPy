@@ -2,6 +2,9 @@
 Workflow for simulation of 5million+ genome pandemic that can be used to test phylogenetic methods on large scale epidemics.
 The current setup simulates a pandemic between 209 countries, with country codes listed in `population_data/output/census_2013.csv`.
 Data for realistic migration and sampling dynamics are obtained through air travel data (2013) and COVID sampling data (2024).
+### Small example output in Taxonium
+![image](https://github.com/user-attachments/assets/1355718f-d63b-4ead-b862-2a65622d49d0)
+
 ## Setup
 ### Installation
 This simulation requires the following libraries. As noted in VGSim, it's recommended that all of these installations are done within a conda environment.
