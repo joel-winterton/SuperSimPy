@@ -1,0 +1,26 @@
+executables:
+  phastexec: ~/EBI/phastSim/bin/phastSim
+  vgexec: ~/EBI/VGsim/VGsim_cmd.py
+
+phastsim-params:
+  ete3_mode: '1'
+  indel:
+    deletion_length_parameters: 0.0 0.0 1.0
+    deletion_length_type: DISCRETE
+    deletion_rate_parameter: '0.1'
+    deletion_rate_type: CONSTANT
+    insertion_length_parameters: 0.0 0.0 1.0
+    insertion_length_type: DISCRETE
+    insertion_rate_parameter: '0.1'
+    insertion_rate_type: CONSTANT
+  ref: mutation_data/NC_045512v2.fa
+  scale: '0.01'
+  mr_model: 'UNREST'
+  mut_rates: '0.008 0.09 0.013 0.012 0.003 0.54 0.055 0.003 0.069 0.015 0.181 0.01'
+
+vgsim-params:
+  it: 400000
+  ppmg: /home/joel/EBI/pandemic-simulator/parameter-files/doublepop
+  rt: mutation_data/twosite.rt
+  samples: 2500
+  sust: mutation_data/flat
