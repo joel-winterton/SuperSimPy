@@ -1,19 +1,23 @@
 # SuperDimPy
-Scripts used to create simulation of 5million+ genome pandemic that can be used to test phylogenetic methods on large scale epidemics.
-## Current pipeline: 
-**@todo:** both VGsim and Phastsim have been modified to interface properly with this simulator, so a fork of both needs to be included here instead of the original repositories which will break the pipeline.
+Workflow for simulation of 5million+ genome pandemic that can be used to test phylogenetic methods on large scale epidemics.
+The current setup simulates a pandemic between 209 countries, with country codes listed in `population_data/output/census_2013.csv`.
+Data for realistic migration and sampling dynamics are obtained through air travel data (2013) and COVID sampling data (2024).
+## Setup
+### Installation
+This simulation requires the following libraries. As noted in VGSim, it's recommended that all of these installations are done within a conda environment.
+1. VGsim https://github.com/joely-w/VGsim [Note: This is a modified VGSim, normal VGSim will not work!]
+2. PhastSim https://github.com/NicolaDM/phastSim
+3. Snakemake https://snakemake.readthedocs.io/en/stable/getting_started/installation.html
+4. Taxonium `pip install taxoniumtools`
+### Configuration
+Once everything is installed you'll need to point snakemake towards the correct executables, by editing the fields in the `executables` field of `config.yaml`.
+#### phastSim
+Change the value of `phastexec` to the absolute path of `bin/phastSim` contained within the installation of phastSim. 
+#### VGsim
+Change the value of `vgexec` to the absolute path of `VGsim_cmd.py` (located within the cloned repository of VGsim, but once VGsim has been installed `VGsim_cmd.py` can be moved anywhere).
+## Pipeline
+Snakemake is used to run the workflow, which runs as VGSim -> phastSim -> taxonium.
 
-**@todo:** pandemic-simulator is not needed since it just creates several workflows, and we use one of them, consider creating our own snakemake workflow.
-Prerequisites: 
-Both these prerequisites have been modified to work with the pipeline, so you'll need to use my forked version: 
-1. VGsim https://github.com/joely-w/VGsim, and the path to `VGsim_cmd.py` needs to be known.
-2. PhastSim https://github.com/NicolaDM/phastSim, and the path to the directory `bin/phastSim` contained within the installation of phastSim needs to be known.
-3. pandemic-simulator https://github.com/jmcbroome/pandemic-simulator this ties together phastSim and vgSim into a single pipeline
+To run the workflow:
 
-Pipeline:
-
-Using the pandemic-simulator workflow, data must be created (in this repository data for a simulation using 209 countries is generated),
-this created data must be placed in the pandemic-simulator workflow and referenced in the `config.yml` in place of the basic 2 population configuration.
-
-The snakemake workflow can then be run.
-https://github.com/jmcbroome/pandemic-simulator/
+```snakemake -s simulate.smk -c1```

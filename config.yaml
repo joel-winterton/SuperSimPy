@@ -20,7 +20,7 @@ phastsim-params:
 
 vgsim-params:
   it: 400000
-  ppmg: /home/joel/EBI/pandemic-simulator/parameter-files/doublepop
+  ppmg: /home/joel/EBI/pandemic-simulator/parameter-files/multipop
   rt: mutation_data/twosite.rt
   samples: 2500
   sust: mutation_data/flat
