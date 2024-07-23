@@ -14,7 +14,7 @@ rule relabelCountries:
     output:
         "data/labelled_metadata.tsv"
     shell:
-        "python3 population_data/relabel_populations.py --metadata data/newick_output_metadata.tsv --census population_data/output/census_2013.csv --output data/labelled_metadata"
+        "python3 population_data/relabel_populations.py --metadata data/newick_output_metadata.tsv --dictionary population_data/output/manypop_country_ids.csv --output data/labelled_metadata"
 
 rule phastSim:
     input:
@@ -28,7 +28,7 @@ rule VGsim:
     output:
         "data/newick_output_tree.nwk",
         "data/newick_output_sample_population.tsv",
-        f"data/newick_output_metadata.tsv"
+        "data/newick_output_metadata.tsv"
     shell:
-        "python3 {config[executables][vgexec]} -rt {config[vgsim-params][rt]} -it {config[vgsim-params][it]} -s {config[vgsim-params][samples]} -pm {config[vgsim-params][ppmg]}.pp {config[vgsim-params][ppmg]}.mg -su {config[vgsim-params][sust]}.su -st {config[vgsim-params][sust]}.st --createNewick data/newick_output"
+        "python3 {config[executables][vgexec]} -rt {config[vgsim-params][rt]} -it {config[vgsim-params][it]} -s {config[vgsim-params][samples]} -pm {config[vgsim-params][ppmg]}.pp {config[vgsim-params][ppmg]}.mg -su {config[vgsim-params][sust]}.su -st {config[vgsim-params][sust]}.st --createNewick data/newick_output --writeMigrations data/migrations"
 
