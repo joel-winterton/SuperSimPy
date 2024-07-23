@@ -3,7 +3,7 @@ Workflow for simulation of 5million+ genome pandemic that can be used to test ph
 The current setup simulates a pandemic between 209 countries, with country codes listed in `population_data/output/census_2013.csv`.
 Data for realistic migration and sampling dynamics are obtained through air travel data (2013) and COVID sampling data (2024).
 ### Small example output in Taxonium
-![image](https://github.com/user-attachments/assets/1355718f-d63b-4ead-b862-2a65622d49d0)
+![image](https://github.com/user-attachments/assets/a7cc77d0-07ee-446c-a546-9968d3df16b8)
 
 
 
