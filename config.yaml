@@ -1,6 +1,6 @@
 executables:
-  phastexec: ~/EBI/phastSim/bin/phastSim
-  vgexec: ~/EBI/VGsim/VGsim_cmd.py
+  phastexec: phastSim
+  vgexec: ./bin/VGsim_cmd.py
 
 phastsim-params:
   ete3_mode: '1'
@@ -22,5 +22,5 @@ vgsim-params:
   it: 6400000
   ppmg: population_data/output/manypop
   rt: mutation_data/twosite.rt
-  samples: 100000
+  samples: 1000
   sust: mutation_data/flat

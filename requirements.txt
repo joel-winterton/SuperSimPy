@@ -1,2 +1,12 @@
+# Data processing
 pandas~=2.2.2
 argparse~=1.4.0
+
+# VGsim
+VGsim @ git+https://github.com/joely-w/VGsim.git@main
+
+# PhastSim
+phastSim @ git+https://github.com/joely-w/phastSim.git@main
+
+# Taxonium
+taxoniumtools
