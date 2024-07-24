@@ -109,7 +109,7 @@ if clargs.seed == None:
 else:
     seed = clargs.seed
 
-simulator = VGsim.Simulator(number_of_sites=int(math.log(len(bRate), 4)), populations_number=len(sizes), number_of_susceptible_groups=len(susceptible[0]), seed=int(seed), sampling_probability=clargs.sampling_probability, memory_optimization=True)
+simulator = VGsim.Simulator(number_of_sites=int(math.log(len(bRate), 4)), populations_number=len(sizes), number_of_susceptible_groups=len(susceptible[0]), seed=int(seed), sampling_probability=clargs.sampling_probability)
 
 for i in range(len(bRate)):
     simulator.set_transmission_rate(bRate[i], i)
