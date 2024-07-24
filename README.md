@@ -10,7 +10,7 @@ Data for realistic migration and sampling dynamics are obtained through air trav
 ## Setup
 Clone the project and navigate inside: 
 
-`git@github.com:joely-w/SuperDimPy.git`
+`git clone https://github.com/joely-w/SuperSimPy.git`
 
 `cd SuperDimPy`
 
