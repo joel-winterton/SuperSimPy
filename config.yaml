@@ -19,10 +19,10 @@ phastsim-params:
   mut_rates: '0.008 0.09 0.013 0.012 0.003 0.54 0.055 0.003 0.069 0.015 0.181 0.01'
 
 vgsim-params:
-  it: 6400000
   ppmg: population_data/output/manypop
   rt: mutation_data/twosite.rt
-  samples: 1000
   sust: mutation_data/flat
 
+vg_iterations: 6400000
+vg_samples: 10000
 output_directory: './data/'

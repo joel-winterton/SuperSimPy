@@ -50,12 +50,23 @@ The notebooks collate several sources together and so work in the order of `cens
 This directory also contains a script to relabel locations from their integer ID's to readable location names.
 
 ### Changing number of samples 
-You can change the number of samples in a simulation through the `config.yml` file, through the `samples` property of the 
-`vgsim-params` object. If you want lots of samples, you'll also need to increase the number if iterations so that the simulation does not stop before the number of samples have been achieved (using `it` in the same object).
+You can override the default number of samples and iterations by editing it in the `config` flag. For instance, if you want to have 50 samples and 2000 iterations: 
+```shell
+snakemake -s simulate.smk -c1 -F --config vg_iterations=2000 vg_samples=50  
+```
+You can also change the number of samples in a simulation through the `config.yml` file, by editing the `vg_samples` property.
+If you want lots of samples, you'll also need to increase the number if iterations so that the simulation does not stop before the number of samples have been achieved (using `vg_iterations`).
+### Cluster friendly command 
+Using the above, an example of a command you might run on a cluster to perform the simulation might be:
+```shell
+snakemake -s simulate.smk -c1 -F --latency-wait 30 --config output_directory='/home/results' vg_iterations=65000000 vg_samples=1000000
+```
 ## Result 
-The result of this pipeline is all tied into one file `data/results.jsonl.gz` which is an annotated tree which contains 
+By default, all resulting files will be placed inside the repository folder in `./data`.
+The result of this pipeline is all tied into one file `results.jsonl.gz` which is an annotated tree which contains 
 the scaled time, along with the location of each sample, and each internal node. This can be visualised in Taxonium: 
-https://taxonium.org/
+https://taxonium.org/.
+
 
 ## Development setup
 Unless you want to develop the libraries used locally, ignore this. 
