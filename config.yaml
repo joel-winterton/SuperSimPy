@@ -24,3 +24,5 @@ vgsim-params:
   rt: mutation_data/twosite.rt
   samples: 1000
   sust: mutation_data/flat
+
+output_directory: './data/'
