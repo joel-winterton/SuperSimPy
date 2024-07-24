@@ -6,7 +6,7 @@ argparse~=1.4.0
 VGsim @ git+https://github.com/joely-w/VGsim.git@main
 
 # PhastSim
-phastSim @ git+https://github.com/joely-w/phastSim.git@main
+phastSim @ git+https://github.com/NicolaDM/phastSim.git@main
 
 # Taxonium
 taxoniumtools
