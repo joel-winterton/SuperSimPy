@@ -1,4 +1,4 @@
-# SuperDimPy
+# SuperSimPy
 Workflow for simulation of 5million+ genome pandemic that can be used to test phylogenetic methods on large scale epidemics.
 The current setup simulates a pandemic between 209 countries, with country codes listed in `population_data/output/census_2013.csv`.
 Data for realistic migration and sampling dynamics are obtained through air travel data (2013) and COVID sampling data (2024).
@@ -12,7 +12,7 @@ Clone the project and navigate inside:
 
 `git clone https://github.com/joely-w/SuperSimPy.git`
 
-`cd SuperDimPy`
+`cd SuperSimPy`
 
 Create and activate a conda environment
 ```shell
