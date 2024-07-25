@@ -32,4 +32,4 @@ rule VGsim:
         expand("{output_dir}/newick_output_sample_population.tsv",output_dir=config['output_directory']),
         expand("{output_dir}/newick_output_metadata.tsv",output_dir=config['output_directory']),
     shell:
-        "python3 {config[executables][vgexec]} -rt {config[vgsim-params][rt]} -it {config[vg_iterations]} -s {config[vg_samples]} -pm {config[vgsim-params][ppmg]}.pp {config[vgsim-params][ppmg]}.mg -su {config[vgsim-params][sust]}.su -st {config[vgsim-params][sust]}.st --createNewick {config[output_directory]}/newick_output --writeMigrations {config[output_directory]}/migrations"
+        "python3 {config[executables][vgexec]} -it {config[vg_iterations]} -s {config[vg_samples]} -pm {config[vgsim-params][ppmg]}.pp {config[vgsim-params][ppmg]}.mg --createNewick {config[output_directory]}/newick_output --writeMigrations {config[output_directory]}/migrations"
