@@ -150,3 +150,4 @@ if clargs.writeMigrations:
     simulator.export_migrations(clargs.writeMigrations)
 if clargs.output_chain_events:
     simulator.export_chain_events(clargs.output_chain_events)
+simulator.print_basic_parameters()
