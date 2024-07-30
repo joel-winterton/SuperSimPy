@@ -14,7 +14,7 @@ phastsim-params:
     insertion_rate_parameter: '0.1'
     insertion_rate_type: CONSTANT
   ref: mutation_data/NC_045512v2.fa
-  scale: '0.00001'
+  scale: '0.0001'
   mr_model: 'UNREST'
   mut_rates: '0.008 0.09 0.013 0.012 0.003 0.54 0.055 0.003 0.069 0.015 0.181 0.01'
 
@@ -24,5 +24,5 @@ vgsim-params:
   sust: mutation_data/flat
 
 vg_iterations: 6400000
-vg_samples: 1000
+vg_samples: 10
 output_directory: 'data'
