@@ -24,7 +24,7 @@ rule phastSim:
     output:
         expand("{output_dir}/sim.mat.pb",output_dir=config['output_directory']),
     shell:
-        "{config[executables][phastexec]} --output sim --outpath {config[output_directory]}/ --reference {config[phastsim-params][ref]} --scale {config[phastsim-params][scale]} --createMAT --treeFile {input} --eteFormat {config[phastsim-params][ete3_mode]} --mutationRates {config[phastsim-params][mr_model]} {config[phastsim-params][mut_rates]} --createNewick"
+        "phastSim --output sim --outpath {config[output_directory]}/ --reference {config[phastsim-params][ref]} --scale {config[phastsim-params][scale]} --createMAT --treeFile {input} --eteFormat {config[phastsim-params][ete3_mode]} --mutationRates {config[phastsim-params][mr_model]} {config[phastsim-params][mut_rates]} --createNewick --createFasta"
 
 rule VGsim:
     output:
@@ -32,4 +32,4 @@ rule VGsim:
         expand("{output_dir}/newick_output_sample_population.tsv",output_dir=config['output_directory']),
         expand("{output_dir}/newick_output_metadata.tsv",output_dir=config['output_directory']),
     shell:
-        "python3 {config[executables][vgexec]} -it {config[vg_iterations]} -s {config[vg_samples]} -pm {config[vgsim-params][ppmg]}.pp {config[vgsim-params][ppmg]}.mg --createNewick {config[output_directory]}/newick_output --writeMigrations {config[output_directory]}/migrations"
+        "python3 ./bin/VGsim_cmd.py -it {config[vg_iterations]} -s {config[vg_samples]} -pm {config[vgsim-params][ppmg]}.pp {config[vgsim-params][ppmg]}.mg --createNewick {config[output_directory]}/newick_output --writeMigrations {config[output_directory]}/migrations"
