@@ -1,18 +1,5 @@
-executables:
-  phastexec: phastSim
-  vgexec: ./bin/VGsim_cmd.py
-
 phastsim-params:
   ete3_mode: '1'
-  indel:
-    deletion_length_parameters: 0.0 0.0 1.0
-    deletion_length_type: DISCRETE
-    deletion_rate_parameter: '0.1'
-    deletion_rate_type: CONSTANT
-    insertion_length_parameters: 0.0 0.0 1.0
-    insertion_length_type: DISCRETE
-    insertion_rate_parameter: '0.1'
-    insertion_rate_type: CONSTANT
   ref: mutation_data/NC_045512v2.fa
   scale: '0.0001'
   mr_model: 'UNREST'
@@ -24,5 +11,5 @@ vgsim-params:
   sust: mutation_data/flat
 
 vg_iterations: 6400000
-vg_samples: 10
+vg_samples: 100
 output_directory: 'data'

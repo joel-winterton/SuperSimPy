@@ -1,4 +1,13 @@
 configfile: 'config.yaml'
+rule PostProcess:
+    input:
+        expand("{output_dir}/sim.tree",output_dir=config['output_directory']),
+        expand("{output_dir}/newick_output_metadata.tsv", output_dir=config['output_directory']),
+    output:
+        expand("{output_dir}/sim.substitutions.tree",output_dir=config['output_directory']),
+        expand("{output_dir}/datefile.txt", output_dir=config['output_directory']),
+    shell:
+        "python3 ./post_processing/post_process.py --datapath {config[output_directory]}"
 
 rule annotateTree:
     input:
