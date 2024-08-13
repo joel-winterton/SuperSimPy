@@ -19,8 +19,7 @@ args = vars(parser.parse_args())
 sim_data_path = args['datapath'] if args['datapath'][-1] == '/' else args['datapath'] + '/'
 genome_length = args['sites']
 
-mut_tree = Phylo.read(sim_data_path + 'sim.tree', 'newick')
-
+mut_tree = Phylo.read(sim_data_path + 'sim.tree', 'newick', rooted=True)
 
 # Rescale tree
 def subs_per_site(mutation_comment):
@@ -43,9 +42,7 @@ def subs_per_site_tree(root):
 
 
 rescaled_tree, sample_ids = subs_per_site_tree(mut_tree)
-rescaled_tree.rooted = True
 Phylo.write(rescaled_tree, sim_data_path + 'sim.substitutions.tree', 'newick')
-
 # Write date-file
 metadata = pd.read_csv(sim_data_path + 'newick_output_metadata.tsv', sep='\t',
                        dtype={'strain': str, 'location': str, 'time': float})

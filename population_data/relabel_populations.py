@@ -14,7 +14,7 @@ parser.add_argument('-o', '--output')
 
 args = vars(parser.parse_args())
 
-metadata = pd.read_csv(args['metadata'], sep='\t')
+metadata = pd.read_csv(args['metadata'], sep=',')
 census = pd.read_csv(args['dictionary'])
 result = pd.merge(metadata, census, on='location', how='left')
 result = result[['strain', 'fullname', 'time']]
