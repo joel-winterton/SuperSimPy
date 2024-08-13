@@ -54,7 +54,7 @@ rule timeScale:
         expand("{output_dir}/newick_output_metadata.tsv", output_dir=config['output_directory']),
     output:
         expand("{output_dir}/genealogy.nwk",output_dir=config['output_directory']),
-        expand("{output_dir}/full_metadata.tsv", output_dir=config['output_directory']),
+        expand("{output_dir}/full_metadata.csv", output_dir=config['output_directory']),
     shell:
         "python3 ./simulation_processing/time_scaler.py --folder={config[output_directory]}"
 

@@ -50,9 +50,9 @@ def days_plus_date(days: float):
     return start_date + datetime.timedelta(days=days)
 
 
-print(f"Writing date time-scaled metadata to {sim_data_path + 'full_metadata.tsv'}.")
+print(f"Writing date time-scaled metadata to {sim_data_path + 'full_metadata.csv'}.")
 metadata['time'] = metadata['time'].apply(lambda x: days_plus_date(x))
 metadata.rename({'time': 'date'})
-metadata.to_csv(sim_data_path + 'full_metadata.tsv', index=False, sep=',')
+metadata.to_csv(sim_data_path + 'full_metadata.csv', index=False, sep=',')
 print(f"Writing time-scaled genealogy to {sim_data_path + 'genealogy.nwk'}")
 Phylo.write(trees=rescale_tree(tree), file=sim_data_path + 'genealogy.nwk', format='newick')
