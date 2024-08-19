@@ -5,10 +5,10 @@ numpy~=1.26.4
 biopython
 
 # VGsim
-VGsim @ git+https://github.com/joely-w/VGsim.git@main
+VGsim @ git+https://github.com/joel-winterton/VGsim@main
 
 # PhastSim
-phastSim @ git+https://github.com/NicolaDM/phastSim.git@main
+phastSim @ git+https://github.com/joel-winterton/phastSim.git@main
 
 # Taxonium
 taxoniumtools
