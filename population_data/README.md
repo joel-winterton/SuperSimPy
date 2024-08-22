@@ -1,9 +1,34 @@
-## Data estimation
-These scripts create realistic data that can be inputted into the simulations.
-The end result of these scripts is data describing migration between 203 countries based off airline flights in 2013, 
-with the data being in a compatible format to be used in the simulation pipeline.
+# Population processing
 
-### Input data
+This folder contains parts of the pipeline relevant to processing population data.
+
+## Pre-pipeline scripts
+
+These scripts do not need to be run as they compile into static data that is used in the pipeline.
+
+### 1. `census_cleanup.ipynb`
+
+Cleans up census data to work with migration matrix (so country names are consistent across files).
+
+### 2. `migration_matrix.ipynb`
+
+Creates a migration probability matrix between 209 countries, using a uniform stay-at-home probability and effective
+distance data.
+
+### 3. `sampling_multipliers.ipynb`
+
+**TODO:** re-input into VGsim.
+
+Calculates sampling rates for each country based off COVID case data and sampling data.
+
+## Pipeline script
+
+These scripts are run during the pipeline
+
+### 1. `relabel_populations.ipynb`
+VGsim labels countries in order using integer IDs, this script relabels these IDs with human-readable country names.
+
+## Input data
 #### World population by country 
 Count of each countries' population. 
 Filepath: `original_data/population2013.csv`
@@ -14,28 +39,3 @@ Source: https://data-explorer.oecd.org/vis?tenant=archive&df[ds]=DisseminateArch
 Matrix of effective distance between countries, as defined in https://www.science.org/doi/10.1126/science.1245200.
 
 Filepath: `original_data/effective.distance.matrix.country.csv`
-
-### Output data
-#### Cleaned census file
-Filepath: `migration_data/output/census_2013.csv`
-#### Alpha 2 codes of countries used in data
-Filepath: `migration_data/output/country_codes.csv`
-#### Migration probability matrix
-In format that will be compatible with the VGsim migration model.
-Order of countries is the same as in `migration_data/output/country_codes.csv`.
-
-Filepath: `migration_data/output/country_migration.mg`
-
-### Scripts 
-#### Census cleanup 
-Creates a census in the format used in the effective distance data.
-Specifically makes sure all country codes are the same format as in effective distance (alpha2).
-
-Filepath: `migration_data/census_cleanup.ipynb`
-
-#### Probability matrix calculator 
-Calculates migration probability matrix from cleaned census data and effective distance matrix, along with some parameters used in 
-the supplementary materials of https://www.science.org/doi/10.1126/science.1245200#supplementary-materials.
-If a different data was used, parameters $$\Omega, \Phi$$ in this script will need to be recalculated from data. 
-
-Filepath: `migration_data/migration_matrix.ipynb`
