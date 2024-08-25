@@ -19,7 +19,7 @@ rule VGsim:
         locations=expand("{output_dir}/newick_output_sample_population.tsv",output_dir=config['output_directory']),
         metadata=expand("{output_dir}/newick_output_metadata.tsv",output_dir=config['output_directory']),
     shell:
-        "python3 ./bin/VGsim_cmd.py -it {config[vg_iterations]} -s {config[vg_samples]} -pm {config[vgsim-params][ppmg]}.pp {config[vgsim-params][ppmg]}.mg --createNewick {config[output_directory]}/newick_output --writeMigrations {config[output_directory]}/migrations"
+        "python3 ./bin/VGsim_cmd.py -it {config[vg_iterations]} -s {config[vg_samples]} -pm {config[pp]} {config[mg]} --createNewick {config[output_directory]}/newick_output --writeMigrations {config[output_directory]}/migrations"
 
 rule timeScale:
     input:
@@ -29,7 +29,7 @@ rule timeScale:
         genealogy=expand("{output_dir}/genealogy.nwk",output_dir=config['output_directory']),
         dated_metadata=expand("{output_dir}/full_metadata.csv",output_dir=config['output_directory']),
     shell:
-        "python3 ./simulation_processing/time_scaler.py --folder={config[output_directory]}"
+        "python3 ./simulation_processing/rescale_genealogy.py --folder={config[output_directory]}"
 
 rule relabelCountries:
     input:
@@ -57,7 +57,7 @@ rule postProcess:
         substitution_tree=expand("{output_dir}/sim.substitutions.tree",output_dir=config['output_directory']),
         datefile=expand("{output_dir}/datefile.txt",output_dir=config['output_directory']),
     shell:
-        "python3 ./simulation_processing/post_process.py --datapath {config[output_directory]}"
+        "python3 ./simulation_processing/rescale_time_tree.py --datapath {config[output_directory]}"
 
 rule annotateTree:
     input:
