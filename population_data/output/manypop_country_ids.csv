@@ -1,210 +1,209 @@
 location,fullname
-1,China
-2,Afghanistan
-3,Antigua and Barbuda
-4,Albania
-5,Armenia
-6,Angola
-7,Argentina
-8,American Samoa
-9,Austria
-10,Australia
-11,Aruba
-12,Azerbaijan
-13,Bosnia and Herzegovina
-14,Barbados
-15,Bangladesh
-16,Belgium
-17,Burkina Faso
-18,Bulgaria
-19,Bahrain
-20,Burundi
-21,Benin
-22,Bermuda
-23,Brunei Darussalam
-24,Bolivia
-25,Brazil
-26,"Bahamas, The"
-27,Bhutan
-28,Botswana
-29,Belarus
-30,Belize
-31,Canada
-32,"Congo, Dem. Rep."
-33,Central African Republic
-34,"Congo, Rep."
-35,Switzerland
-36,Cote d'Ivoire
-37,Chile
-38,Cameroon
-39,United Arab Emirates
-40,Colombia
-41,Costa Rica
-42,Cuba
-43,Cabo Verde
-44,Curacao
-45,Cyprus
-46,Czechia
-47,Germany
-48,Djibouti
-49,Denmark
-50,Dominica
-51,Dominican Republic
-52,Algeria
-53,Ecuador
-54,Estonia
-55,"Egypt, Arab Rep."
-56,Eritrea
-57,Spain
-58,Ethiopia
-59,Finland
-60,Fiji
-61,"Micronesia, Fed. Sts."
-62,Faroe Islands
-63,France
-64,Gabon
-65,United Kingdom
-66,Grenada
-67,Georgia
-68,Ghana
-69,Gibraltar
-70,Greenland
-71,"Gambia, The"
-72,Guinea
-73,Equatorial Guinea
-74,Greece
-75,Guatemala
-76,Guam
-77,Guinea-Bissau
-78,Guyana
-79,"Hong Kong SAR, China"
-80,Honduras
-81,Croatia
-82,Haiti
-83,Hungary
-84,Indonesia
-85,Ireland
-86,Israel
-87,India
-88,Iraq
-89,"Iran, Islamic Rep."
-90,Iceland
-91,Italy
-92,Jamaica
-93,Jordan
-94,Japan
-95,Kenya
-96,Kyrgyz Republic
-97,Cambodia
-98,Kiribati
-99,Comoros
-100,St. Kitts and Nevis
-101,"Korea, Dem. People's Rep."
-102,"Korea, Rep."
-103,Kuwait
-104,Cayman Islands
-105,Kazakhstan
-106,Lao PDR
-107,Lebanon
-108,St. Lucia
-109,Sri Lanka
-110,Liberia
-111,Lesotho
-112,Lithuania
-113,Luxembourg
-114,Latvia
-115,Libya
-116,Morocco
-117,Monaco
-118,Moldova
-119,Montenegro
-120,St. Martin (French part)
-121,Madagascar
-122,Marshall Islands
-123,North Macedonia
-124,Mali
-125,Myanmar
-126,Mongolia
-127,"Macao SAR, China"
-128,Northern Mariana Islands
-129,Mauritania
-130,Malta
-131,Mauritius
-132,Maldives
-133,Malawi
-134,Mexico
-135,Malaysia
-136,Mozambique
-137,New Caledonia
-138,Niger
-139,Nigeria
-140,Nicaragua
-141,Netherlands
-142,Norway
-143,Nepal
-144,Nauru
-145,New Zealand
-146,Oman
-147,Panama
-148,Peru
-149,French Polynesia
-150,Papua New Guinea
-151,Philippines
-152,Pakistan
-153,Poland
-154,Puerto Rico
-155,Portugal
-156,Palau
-157,Paraguay
-158,Qatar
-159,Romania
-160,Serbia
-161,Russian Federation
-162,Rwanda
-163,Saudi Arabia
-164,Solomon Islands
-165,Seychelles
-166,Sudan
-167,Sweden
-168,Singapore
-169,Slovenia
-170,Slovak Republic
-171,Sierra Leone
-172,Senegal
-173,Somalia
-174,Suriname
-175,South Sudan
-176,Sao Tome and Principe
-177,El Salvador
-178,Sint Maarten (Dutch part)
-179,Syrian Arab Republic
-180,Eswatini
-181,Turks and Caicos Islands
-182,Chad
-183,Togo
-184,Thailand
-185,Tajikistan
-186,Timor-Leste
-187,Turkmenistan
-188,Tunisia
-189,Tonga
-190,Turkiye
-191,Trinidad and Tobago
-192,Tuvalu
-193,Tanzania
-194,Ukraine
-195,Uganda
-196,United States
-197,Uruguay
-198,Uzbekistan
-199,St. Vincent and the Grenadines
-200,"Venezuela, RB"
-201,British Virgin Islands
-202,Virgin Islands (U.S.)
-203,Viet Nam
-204,Vanuatu
-205,Samoa
-206,"Yemen, Rep."
-207,South Africa
-208,Zambia
-209,Zimbabwe
+0,China
+1,Afghanistan
+2,Antigua and Barbuda
+3,Armenia
+4,Angola
+5,Argentina
+6,American Samoa
+7,Austria
+8,Australia
+9,Aruba
+10,Azerbaijan
+11,Bosnia and Herzegovina
+12,Barbados
+13,Bangladesh
+14,Belgium
+15,Burkina Faso
+16,Bulgaria
+17,Bahrain
+18,Burundi
+19,Benin
+20,Bermuda
+21,Brunei Darussalam
+22,Bolivia
+23,Brazil
+24,"Bahamas, The"
+25,Bhutan
+26,Botswana
+27,Belarus
+28,Belize
+29,Canada
+30,"Congo, Dem. Rep."
+31,Central African Republic
+32,"Congo, Rep."
+33,Switzerland
+34,Cote d'Ivoire
+35,Chile
+36,Cameroon
+37,United Arab Emirates
+38,Colombia
+39,Costa Rica
+40,Cuba
+41,Cabo Verde
+42,Curacao
+43,Cyprus
+44,Czechia
+45,Germany
+46,Djibouti
+47,Denmark
+48,Dominica
+49,Dominican Republic
+50,Algeria
+51,Ecuador
+52,Estonia
+53,"Egypt, Arab Rep."
+54,Eritrea
+55,Spain
+56,Ethiopia
+57,Finland
+58,Fiji
+59,"Micronesia, Fed. Sts."
+60,Faroe Islands
+61,France
+62,Gabon
+63,United Kingdom
+64,Grenada
+65,Georgia
+66,Ghana
+67,Gibraltar
+68,Greenland
+69,"Gambia, The"
+70,Guinea
+71,Equatorial Guinea
+72,Greece
+73,Guatemala
+74,Guam
+75,Guinea-Bissau
+76,Guyana
+77,"Hong Kong SAR, China"
+78,Honduras
+79,Croatia
+80,Haiti
+81,Hungary
+82,Indonesia
+83,Ireland
+84,Israel
+85,India
+86,Iraq
+87,"Iran, Islamic Rep."
+88,Iceland
+89,Italy
+90,Jamaica
+91,Jordan
+92,Japan
+93,Kenya
+94,Kyrgyz Republic
+95,Cambodia
+96,Kiribati
+97,Comoros
+98,St. Kitts and Nevis
+99,"Korea, Dem. People's Rep."
+100,"Korea, Rep."
+101,Kuwait
+102,Cayman Islands
+103,Kazakhstan
+104,Lao PDR
+105,Lebanon
+106,St. Lucia
+107,Sri Lanka
+108,Liberia
+109,Lesotho
+110,Lithuania
+111,Luxembourg
+112,Latvia
+113,Libya
+114,Morocco
+115,Monaco
+116,Moldova
+117,Montenegro
+118,St. Martin (French part)
+119,Madagascar
+120,Marshall Islands
+121,North Macedonia
+122,Mali
+123,Myanmar
+124,Mongolia
+125,"Macao SAR, China"
+126,Northern Mariana Islands
+127,Mauritania
+128,Malta
+129,Mauritius
+130,Maldives
+131,Malawi
+132,Mexico
+133,Malaysia
+134,Mozambique
+135,New Caledonia
+136,Niger
+137,Nigeria
+138,Nicaragua
+139,Netherlands
+140,Norway
+141,Nepal
+142,Nauru
+143,New Zealand
+144,Oman
+145,Panama
+146,Peru
+147,French Polynesia
+148,Papua New Guinea
+149,Philippines
+150,Pakistan
+151,Poland
+152,Puerto Rico
+153,Portugal
+154,Palau
+155,Paraguay
+156,Qatar
+157,Romania
+158,Serbia
+159,Russian Federation
+160,Rwanda
+161,Saudi Arabia
+162,Solomon Islands
+163,Seychelles
+164,Sudan
+165,Sweden
+166,Singapore
+167,Slovenia
+168,Slovak Republic
+169,Sierra Leone
+170,Senegal
+171,Somalia
+172,Suriname
+173,South Sudan
+174,Sao Tome and Principe
+175,El Salvador
+176,Sint Maarten (Dutch part)
+177,Syrian Arab Republic
+178,Eswatini
+179,Turks and Caicos Islands
+180,Chad
+181,Togo
+182,Thailand
+183,Tajikistan
+184,Timor-Leste
+185,Turkmenistan
+186,Tunisia
+187,Tonga
+188,Turkiye
+189,Trinidad and Tobago
+190,Tuvalu
+191,Tanzania
+192,Ukraine
+193,Uganda
+194,United States
+195,Uruguay
+196,Uzbekistan
+197,St. Vincent and the Grenadines
+198,"Venezuela, RB"
+199,British Virgin Islands
+200,Virgin Islands (U.S.)
+201,Viet Nam
+202,Vanuatu
+203,Samoa
+204,"Yemen, Rep."
+205,South Africa
+206,Zambia
+207,Zimbabwe
