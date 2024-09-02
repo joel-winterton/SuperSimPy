@@ -25,7 +25,8 @@ rule relabelCountries:
         rules.timeScale.output.dated_metadata,
         "pre_processing/data_sources/census_2013.csv"
     output:
-        complete_metadata=expand("{output_dir}/dated_country_labelled_metadata.tsv",output_dir=config['output_directory'])
+        complete_metadata=expand("{output_dir}/dated_country_labelled_metadata.tsv",output_dir=config[
+            'output_directory'])
     shell:
         "python3 pipeline_processing/relabel_populations.py --metadata {config[output_directory]}/dated_metadata.csv --dictionary parameters/manypop_country_ids.csv --output {config[output_directory]}/dated_country_labelled_metadata"
 
@@ -55,7 +56,18 @@ rule annotateTree:
     output:
         annotated_tree=expand("{output_dir}/fully_annotated_tree.jsonl.gz",output_dir=config['output_directory'])
     shell:
-        "usher_to_taxonium --input {config[output_directory]}/sim.mat.pb --output {config[output_directory]}/fully_annotated_tree.jsonl.gz --metadata {config[output_directory]}/dated_country_labelled_metadata.tsv --columns location,time"
+        "usher_to_taxonium --input {config[output_directory]}/sim.mat.pb --output {config[output_directory]}/fully_annotated_tree.jsonl.gz --metadata {config[output_directory]}/dated_country_labelled_metadata.tsv --columns location"
+
+rule visualisations:
+    input:
+        rules.phastSim.output.sim_tree,
+        rules.timeToGeneticDistance.output.substitution_tree,
+    output:
+        time_image=expand("{output_dir}/sim.tree distributions.png",output_dir=config['output_directory']),
+        substitutions_image=expand("{output_dir}/sim.substitutions.tree distributions.png",output_dir=config['output_directory'])
+    shell:
+        "python3 post_processing/branch_distributions.py --folder={config[output_directory]}"
+
 rule all:
     default_target: True,
     input:
@@ -66,4 +78,6 @@ rule all:
         rules.phastSim.output.sim_tree,
         rules.VGsim.output.newick_tree,
         rules.VGsim.output.locations,
-        rules.relabelCountries.output.complete_metadata
+        rules.relabelCountries.output.complete_metadata,
+        rules.visualisations.output.time_image,
+        rules.visualisations.output.substitutions_image
