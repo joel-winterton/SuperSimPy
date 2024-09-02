@@ -10,8 +10,7 @@ vgsim-params:
   rt: mutation_data/twosite.rt
   sust: mutation_data/flat
 
-pp: population_data/output/manypop_biased.pp
-mg: population_data/output/manypop.mg
+population_params: parameters/manypop
 vg_iterations: 640000000
 vg_samples: 100
-output_directory: 'data'
+output_directory: 'output'
