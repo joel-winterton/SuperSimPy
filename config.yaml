@@ -11,6 +11,6 @@ vgsim-params:
   sust: mutation_data/flat
 
 population_params: parameters/manypop
-vg_iterations: 92233720368547758
+vg_iterations: 19200000000
 vg_samples: 10
 output_directory: 'output'
