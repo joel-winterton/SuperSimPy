@@ -1,3 +1,5 @@
 .snakemake
 .ipynb_checkpoints
 .idea
+.timetree
+.output
