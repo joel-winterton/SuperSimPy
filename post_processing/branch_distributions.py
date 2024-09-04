@@ -5,16 +5,18 @@ import matplotlib.pyplot as plt
 from Bio import Phylo
 import argparse
 
-parser = argparse.ArgumentParser(
-    prog='SuperSimPyVisualiser',
-    description="Branch distribution visualisation script for SuperSimPy")
+# parser = argparse.ArgumentParser(
+#     prog='SuperSimPyVisualiser',
+#     description="Branch distribution visualisation script for SuperSimPy")
+#
+# parser.add_argument('-f', '--folder', required=True)
+# args = vars(parser.parse_args())
 
-parser.add_argument('-f', '--folder', required=True)
-args = vars(parser.parse_args())
-
-sim_data_path = args['folder'] if args['folder'][-1] == '/' else args['folder'] + '/'
-trees = [dict(path='sim.substitutions.tree', name='substitutions per site'),
-         dict(path='sim.tree', name='time between nodes')]
+# sim_data_path = args['folder'] if args['folder'][-1] == '/' else args['folder'] + '/'
+# trees = [dict(path='sim.substitutions.tree', name='substitutions per site'),
+#          dict(path='sim.tree', name='time between nodes')]
+trees = [dict(path='public-2024-09-02.all.nwk', name='subs per site')]
+sim_data_path = '/home/joel/Downloads/COVID-public-latest.all.nwk/'
 
 
 def store_branch_lengths(root):
@@ -49,17 +51,22 @@ def root_to_tip(root):
 
 for obj in trees:
     tree = Phylo.read(sim_data_path + obj['path'], 'newick', rooted=True)
+    print(f"Loaded newick tree from {sim_data_path + obj['path']}")
     branch_lengths = store_branch_lengths(tree)
+    print(f"Branch lengths calculated")
     rtt_lengths = root_to_tip(tree)
+    print(f"RTT lengths calculated")
 
     fig = plt.figure()
     fig.suptitle(f"Length distributions for {obj['name']}.")
     axis1 = fig.add_subplot(211)
     axis1.set_title('Isolated branch lengths')
+    axis1.set_xlim([0, 200])
     axis2 = fig.add_subplot(212)
     axis2.set_title('Root to tip lengths')
     fig.subplots_adjust(hspace=0.5)
 
-    axis1.hist(branch_lengths, density=True)
-    axis2.hist(rtt_lengths, density=True)
+    axis1.hist(branch_lengths, density=True, bins=50)
+
+    axis2.hist(rtt_lengths, density=True, bins=50)
     fig.savefig(f"{sim_data_path}/{obj['path']} distributions.png")
