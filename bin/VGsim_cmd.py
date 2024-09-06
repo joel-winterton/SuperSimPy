@@ -2,7 +2,7 @@
 This is a (only slightly) edited version of the command line interface provided in the VGsim repository.
 Original file and credit: https://github.com/Genomics-HSE/VGsim/blob/main/VGsim_cmd.py
 """
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 
 import argparse
 import sys
@@ -34,11 +34,11 @@ parser.add_argument('--suscepTransition', '-st', nargs=1, default=None,
 
 parser.add_argument('--sampling_probability', help="#TODO", action="store_true")
 
-parser.add_argument("--createNewick", '-nwk', nargs=1, default=False, 
+parser.add_argument("--createNewick", '-nwk', nargs=1, default=False,
                     help="Create a newick file of tree *.nwk ")
-parser.add_argument("--writeMutations", '-tsv', nargs=1, default=False, 
+parser.add_argument("--writeMutations", '-tsv', nargs=1, default=False,
                     help="Create a mutation file *.tsv ")
-parser.add_argument("--writeMigrations", nargs=1, default=False, 
+parser.add_argument("--writeMigrations", nargs=1, default=False,
                     help="Create a migration file *.tsv ")
 parser.add_argument("--output_chain_events", nargs=1, default=False,
                     help="#TODO")
@@ -60,7 +60,7 @@ if isinstance(clargs.iterations, list):
 if isinstance(clargs.sampleSize, list):
     clargs.sampleSize = clargs.sampleSize[0]
 if isinstance(clargs.time, list):
-	clargs.time = clargs.time[0]
+    clargs.time = clargs.time[0]
 if isinstance(clargs.susceptibility, list):
     clargs.susceptibility = clargs.susceptibility[0]
 if isinstance(clargs.suscepTransition, list):
@@ -90,7 +90,8 @@ if clargs.populationModel == None:
     sizes, contactDensity, contactAfter, startLD, endLD, samplingMultiplier = [1000000], [1], [1], [1], [1], [1]
     migrationRates = [[0.0]]
 else:
-    sizes, contactDensity, contactAfter, startLD, endLD, samplingMultiplier = VGsim.IO.read_populations(clargs.populationModel[0])
+    sizes, contactDensity, contactAfter, startLD, endLD, samplingMultiplier = VGsim.IO.read_populations(
+        clargs.populationModel[0])
     migrationRates = VGsim.IO.read_matrix(clargs.populationModel[1])
 
 if clargs.susceptibility == None:
@@ -109,7 +110,9 @@ if clargs.seed == None:
 else:
     seed = clargs.seed
 
-simulator = VGsim.Simulator(number_of_sites=int(math.log(len(bRate), 4)), populations_number=len(sizes), number_of_susceptible_groups=len(susceptible[0]), seed=int(seed), sampling_probability=clargs.sampling_probability)
+simulator = VGsim.Simulator(number_of_sites=int(math.log(len(bRate), 4)), populations_number=len(sizes),
+                            number_of_susceptible_groups=len(susceptible[0]), seed=int(seed),
+                            sampling_probability=clargs.sampling_probability, memory_optimization=True)
 
 for i in range(len(bRate)):
     simulator.set_transmission_rate(bRate[i], i)
