@@ -2,7 +2,7 @@
 Outputs: Rescaled genealogy tree.
 Convert VGSim timescale to days.
 The simulation runs with its own unit of time,
- using SIR parameters beta = 2, alpha=1 which indicates a sensible timescale is 1 time unit = 10 days.
+ using SIR parameters beta = 3, alpha=1 which indicates a sensible timescale is 1 time unit = 10 days.
 """
 from Bio import Phylo
 import argparse

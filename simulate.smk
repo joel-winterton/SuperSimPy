@@ -7,6 +7,7 @@ rule VGsim:
         newick_tree=expand("{output_dir}/newick_output_tree.nwk",output_dir=config['output_directory']),
         locations=expand("{output_dir}/newick_output_sample_population.tsv",output_dir=config['output_directory']),
         metadata=expand("{output_dir}/newick_output_metadata.tsv",output_dir=config['output_directory']),
+    threads: 4,
     shell:
         "python3 ./bin/VGsim_cmd.py -it {config[vg_iterations]} -s {config[vg_samples]} -pm {config[population_params]}.pp {config[population_params]}.mg --createNewick {config[output_directory]}/newick_output --writeMigrations {config[output_directory]}/migrations"
 
@@ -36,6 +37,7 @@ rule phastSim:
     output:
         sim_pb=expand("{output_dir}/sim.mat.pb",output_dir=config['output_directory']),
         sim_tree=expand("{output_dir}/sim.tree",output_dir=config['output_directory']),
+    threads: 4,
     shell:
         "phastSim --output sim --outpath {config[output_directory]}/ --reference {config[phastsim-params][ref]} --scale {config[phastsim-params][scale]} --createMAT --treeFile {input} --eteFormat {config[phastsim-params][ete3_mode]} --mutationRates {config[phastsim-params][mr_model]} {config[phastsim-params][mut_rates]} --createNewick"
 
@@ -64,7 +66,8 @@ rule visualisations:
         rules.timeToGeneticDistance.output.substitution_tree,
     output:
         time_image=expand("{output_dir}/sim.tree distributions.png",output_dir=config['output_directory']),
-        substitutions_image=expand("{output_dir}/sim.substitutions.tree distributions.png",output_dir=config['output_directory'])
+        substitutions_image=expand("{output_dir}/sim.substitutions.tree distributions.png",output_dir=config[
+            'output_directory'])
     shell:
         "python3 post_processing/branch_distributions.py --folder={config[output_directory]}"
 
