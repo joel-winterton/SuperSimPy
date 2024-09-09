@@ -5,18 +5,16 @@ import matplotlib.pyplot as plt
 from Bio import Phylo
 import argparse
 
-# parser = argparse.ArgumentParser(
-#     prog='SuperSimPyVisualiser',
-#     description="Branch distribution visualisation script for SuperSimPy")
-#
-# parser.add_argument('-f', '--folder', required=True)
-# args = vars(parser.parse_args())
+parser = argparse.ArgumentParser(
+    prog='SuperSimPyVisualiser',
+    description="Branch distribution visualisation script for SuperSimPy")
 
-# sim_data_path = args['folder'] if args['folder'][-1] == '/' else args['folder'] + '/'
-# trees = [dict(path='sim.substitutions.tree', name='substitutions per site'),
-#          dict(path='sim.tree', name='time between nodes')]
-trees = [dict(path='public-2024-09-02.all.nwk', name='subs per site')]
-sim_data_path = '/home/joel/Downloads/COVID-public-latest.all.nwk/'
+parser.add_argument('-f', '--folder', required=True)
+args = vars(parser.parse_args())
+
+sim_data_path = args['folder'] if args['folder'][-1] == '/' else args['folder'] + '/'
+trees = [dict(path='sim.substitutions.tree', name='substitutions per site'),
+         dict(path='sim.tree', name='time between nodes')]
 
 
 def store_branch_lengths(root):
