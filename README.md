@@ -36,7 +36,7 @@ snakemake -s simulate.smk -c1 -F
 ```
 If done on a cluster, you can point the output towards an external directory, and add filesystem latency: 
 ```shell
-snakemake -s simulate.smk -c1 -F --latency-wait 10 --config output_directory='/home/joel/output_data'
+snakemake -s simulate.smk -c1 -F --latency-wait 10 --config output_directory='/home/joel/output_data' vg_samples=10000
 ```
 If you only want to execute unsatisfied tasks (say you've deleted some files), remove the `-F` flag, this will remove the force rerun option and snakemake will only run tasks which need to be updated according to their updated dependencies.
 ### Migration data
