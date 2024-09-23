@@ -30,9 +30,21 @@ import tensorflow as tf
 import tensorflow_probability as tfp
 import gemlib
 import pandas as pd
+import argparse
 dtype=np.float32
 gld = gemlib.distributions
 tfd = tfp.distributions
+
+parser = argparse.ArgumentParser(
+    prog='Gemlib simulation',
+    description="Gemlib simulation test")
+
+parser.add_argument('-o', '--output', required=True)
+parser.add_argument('-i', '--iterations', default=250)
+args = vars(parser.parse_args())
+iterations = int(args['iterations'])
+output = args['output'] if args['output'][-1] == '/' else args['output'] + '/'
+
 # %matplotlib inline
 def plot_timeseries(
         times, states, plot_height=4, labels=["S", "I", "R"], alpha=1.0, population_lim=10
@@ -124,7 +136,7 @@ def large_model():
       transition_rate_fn=make_transition_fn(**params),
       incidence_matrix=incidence_matrix,
       initial_state=initial_state,
-      num_steps=18000000000,
+      num_steps=iterations,
       name="sirs"
   ).sample()
 
@@ -133,4 +145,4 @@ events = large_model()
 """### Save to file"""
 
 sim_data = pd.DataFrame(data=dict(time= events.time, deme=events.unit, event_type=events.transition))
-sim_data.to_csv('./gemlib_output.csv')
+sim_data.to_csv(f'{output}gemlib_output.csv')
