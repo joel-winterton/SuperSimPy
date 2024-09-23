@@ -12,3 +12,6 @@ phastSim @ git+https://github.com/joel-winterton/phastSim.git@main
 
 # Taxonium
 taxoniumtools
+
+# Gemlib (installs tensorflow as well)
+gemlib
