@@ -10,7 +10,7 @@ vgsim-params:
   rt: mutation_data/twosite.rt
   sust: mutation_data/flat
 
-population_params: parameters/manypop
+population_params: UK_LAD/parameters/manypop
 vg_iterations: 19200000000
 vg_samples: 10
 output_directory: 'output'
