@@ -92,8 +92,6 @@ if clargs.populationModel == None:
 else:
     sizes, contactDensity, contactAfter, startLD, endLD, samplingMultiplier = VGsim.IO.read_populations(
         clargs.populationModel[0])
-    print("Sizes")
-    print(sizes)
     migrationRates = VGsim.IO.read_matrix(clargs.populationModel[1])
 
 if clargs.susceptibility == None:
@@ -125,10 +123,6 @@ for i in range(len(bRate)):
         simulator.set_mutation_probabilities([mRate[i][j][1], mRate[i][j][2], mRate[i][j][3], mRate[i][j][4]], i, j)
 
 for i in range(len(sizes)):
-    print(i)
-    print(contactAfter)
-    print(startLD)
-    print(endLD)
     simulator.set_population_size(sizes[i], i)
     simulator.set_contact_density(contactDensity[i], i)
     simulator.set_npi([contactAfter[i], startLD[i], endLD[i]], i)
