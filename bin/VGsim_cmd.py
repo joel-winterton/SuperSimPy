@@ -92,6 +92,8 @@ if clargs.populationModel == None:
 else:
     sizes, contactDensity, contactAfter, startLD, endLD, samplingMultiplier = VGsim.IO.read_populations(
         clargs.populationModel[0])
+    print("Sizes")
+    print(sizes)
     migrationRates = VGsim.IO.read_matrix(clargs.populationModel[1])
 
 if clargs.susceptibility == None:
