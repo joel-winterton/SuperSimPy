@@ -9,7 +9,7 @@ rule VGsim:
         metadata=expand("{output_dir}/newick_output_metadata.tsv",output_dir=config['output_directory']),
     threads: 4,
     shell:
-        "python3 ./bin/VGsim_cmd.py -rt mutation_data/twosite.rt -it {config[vg_iterations]} -s {config[vg_samples]} -pm {config[population_params]}.pp {config[population_params]}.mg --createNewick {config[output_directory]}/newick_output --writeMigrations {config[output_directory]}/migrations -su mutation_data/flat.su"
+        "python3 ./bin/VGsim_cmd.py -it {config[vg_iterations]} -s {config[vg_samples]} -pm {config[population_params]}.pp {config[population_params]}.mg --createNewick {config[output_directory]}/newick_output --writeMigrations {config[output_directory]}/migrations -su mutation_data/flat.su"
 
 rule timeScale:
     input:
